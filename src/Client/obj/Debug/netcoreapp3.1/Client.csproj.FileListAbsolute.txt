@@ -1,0 +1,16 @@
+D:\Github\Auth\src\Client\bin\Debug\netcoreapp3.1\Client.exe
+D:\Github\Auth\src\Client\bin\Debug\netcoreapp3.1\Client.deps.json
+D:\Github\Auth\src\Client\bin\Debug\netcoreapp3.1\Client.runtimeconfig.json
+D:\Github\Auth\src\Client\bin\Debug\netcoreapp3.1\Client.runtimeconfig.dev.json
+D:\Github\Auth\src\Client\bin\Debug\netcoreapp3.1\Client.dll
+D:\Github\Auth\src\Client\bin\Debug\netcoreapp3.1\Client.pdb
+D:\Github\Auth\src\Client\bin\Debug\netcoreapp3.1\IdentityModel.dll
+D:\Github\Auth\src\Client\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Github\Auth\src\Client\obj\Debug\netcoreapp3.1\Client.csprojAssemblyReference.cache
+D:\Github\Auth\src\Client\obj\Debug\netcoreapp3.1\Client.AssemblyInfoInputs.cache
+D:\Github\Auth\src\Client\obj\Debug\netcoreapp3.1\Client.AssemblyInfo.cs
+D:\Github\Auth\src\Client\obj\Debug\netcoreapp3.1\Client.csproj.CoreCompileInputs.cache
+D:\Github\Auth\src\Client\obj\Debug\netcoreapp3.1\Client.csproj.CopyComplete
+D:\Github\Auth\src\Client\obj\Debug\netcoreapp3.1\Client.dll
+D:\Github\Auth\src\Client\obj\Debug\netcoreapp3.1\Client.pdb
+D:\Github\Auth\src\Client\obj\Debug\netcoreapp3.1\Client.genruntimeconfig.cache
