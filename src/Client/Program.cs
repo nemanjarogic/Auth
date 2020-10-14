@@ -57,6 +57,8 @@ namespace Client
                 Console.WriteLine(JArray.Parse(content));
             }
 
+            // Please note that this client is OAuth client we don't have redirections or identity tokens
+            // It's more like machine to machine communication
             Console.ReadLine();
         }
     }
