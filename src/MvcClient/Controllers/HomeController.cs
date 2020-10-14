@@ -28,6 +28,13 @@ namespace MvcClient.Controllers
             return View();
         }
 
+        public IActionResult Logout()
+        {
+            // This will clear the local cookie and then redirect to the IdentityServer.
+            // The IdentityServer will clear its cookies and then give the user a link to return back to the MVC application.
+            return SignOut("Cookies", "oidc");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
