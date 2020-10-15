@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,18 +25,18 @@ namespace MvcClient
             JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
             services
-                .AddAuthentication(options =>
-                {
+               .AddAuthentication(options =>
+               {
                     // We are using a cookie to locally sign-in the user
                     options.DefaultScheme = "Cookies";
 
                     // When we need the user to login, we will be using the OpenID Connect protocol
                     options.DefaultChallengeScheme = "oidc";
-                })
-                // Add the handler that can process cookies.
-                .AddCookie("Cookies")
+               })
+               // Add the handler that can process cookies.
+               .AddCookie("Cookies")
                 // Configure the handler that performs the OpenID Connect protocol
-                .AddOpenIdConnect("oidc", options =>
+               .AddOpenIdConnect("oidc", options =>
                 {
                     // Where the trusted token service (identity server) is located.
                     options.Authority = "https://localhost:5001";
@@ -48,6 +44,15 @@ namespace MvcClient
                     options.ClientId = "mvc";
                     options.ClientSecret = "secret";
                     options.ResponseType = "code";
+
+                    // Even though we’ve configured the client to be allowed to retrieve the profile identity scope (IdentityServer->Config.cs),
+                    // the claims associated with that scope (such as name, family_name, website etc.) don’t appear by default in the returned token.
+                    options.Scope.Add("profile");
+                    options.Scope.Add("favoriteProgrammingLanguage");
+                    options.GetClaimsFromUserInfoEndpoint = true;
+
+                    // Map non-standard claim between the claim appearing in JSON and the user claim
+                    options.ClaimActions.MapUniqueJsonKey("favoriteProgrammingLanguage", "favoriteProgrammingLanguage");
 
                     // Persist the tokens from IdentityServer in the cookie
                     options.SaveTokens = true;
@@ -67,7 +72,9 @@ namespace MvcClient
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();

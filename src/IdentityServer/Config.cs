@@ -15,6 +15,7 @@ namespace IdentityServer
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
+                new IdentityResource("favoriteProgrammingLanguage", new List<string> { "favoriteProgrammingLanguage" }),
             };
 
         public static IEnumerable<ApiScope> ApiScopes =>
@@ -60,7 +61,8 @@ namespace IdentityServer
                     AllowedScopes = new List<string>
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "favoriteProgrammingLanguage",
                     }
                 }
             };
