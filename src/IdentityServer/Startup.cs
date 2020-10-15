@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace IdentityServer
 {
@@ -27,12 +29,31 @@ namespace IdentityServer
             // uncomment, if you want to add an MVC-based UI
             services.AddControllersWithViews();
 
+            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+            var connectionString = Configuration["ConnectionStrings:DefaultConnection"];
+
             var builder = services
                 .AddIdentityServer()
-                .AddInMemoryIdentityResources(Config.IdentityResources)
-                .AddInMemoryApiScopes(Config.ApiScopes)
-                .AddInMemoryClients(Config.Clients)
-                .AddTestUsers(TestUsers.Users);
+                .AddTestUsers(TestUsers.Users)
+                .AddConfigurationStore(options =>
+                {
+                    // used for configuration data such as clients, resources, and scopes
+                    options.ConfigureDbContext = b => b.UseSqlServer(
+                        connectionString,
+                        sql => sql.MigrationsAssembly(migrationsAssembly));
+                })
+                .AddOperationalStore(options =>
+                {
+                    // used for temporary operational data such as authorization codes, and refresh tokens
+                    options.ConfigureDbContext = b => b.UseSqlServer(
+                        connectionString,
+                        sql => sql.MigrationsAssembly(migrationsAssembly));
+                });
+
+            // We use EF Core, so in memory implementation is obsolete
+            //.AddInMemoryIdentityResources(Config.IdentityResources)
+            //.AddInMemoryApiScopes(Config.ApiScopes)
+            //.AddInMemoryClients(Config.Clients)
 
             builder.AddDeveloperSigningCredential();
 
