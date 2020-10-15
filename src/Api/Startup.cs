@@ -35,11 +35,24 @@ namespace Api
                     policy.RequireClaim("scope", "api1");
                 });
             });
+
+            //services.AddCors(options =>
+            //{
+            //    // this defines a CORS policy called "default"
+            //    options.AddPolicy("default", policy =>
+            //    {
+            //        policy.WithOrigins("https://localhost:5003")
+            //            .AllowAnyHeader()
+            //            .AllowAnyMethod();
+            //    });
+            //});
         }
 
         public void Configure(IApplicationBuilder app)
         {
             app.UseRouting();
+
+            app.UseCors("default");
 
             app.UseAuthentication();
             app.UseAuthorization();
