@@ -56,6 +56,12 @@ namespace MvcClient
 
                     // Persist the tokens from IdentityServer in the cookie
                     options.SaveTokens = true;
+
+                    // Since SaveTokens is enabled, ASP.NET Core will automatically store the resulting ID, access and refresh token in the authentication session.
+                    // Identity resources related with ID token are profile, favoriteProgrammingLanguage etc.
+                    // Identity resources related with access token are api1 - scope to the API
+                    options.Scope.Add("api1");
+                    options.Scope.Add("offline_access");
                 });
         }
 
