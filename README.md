@@ -7,6 +7,6 @@ Next branchses are available:
 
 
 Available projects from the solution will be available through the ports:
- - IdentityServer: 5001
- - Api : 6001
- - MvcClient : 5002
+ - `IdentityServer`: 5001
+ - `Api` : 6001
+ - `MvcClient` : 5002
