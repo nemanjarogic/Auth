@@ -13,4 +13,4 @@ Available projects from the solution will be available through the ports:
  - `Api` : 6001
  - `MvcClient` : 5002
  - `JavaScriptClient` : 5003
- - `ReactClient` : 5003 (ReactClient is not configured for work with IdentityServer, it's just initial project)
+ - `ReactClient` : 6003 (ReactClient is not configured for work with IdentityServer, it's just initial project)
