@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactClient", "ReactClient\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaScriptClient", "JavaScriptClient\JavaScriptClient.csproj", "{DBE68018-9DB5-44C3-8465-A5596963AE2E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerAspNetIdentity", "IdentityServerAspNetIdentity\IdentityServerAspNetIdentity.csproj", "{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,18 @@ Global
 		{DBE68018-9DB5-44C3-8465-A5596963AE2E}.Release|x64.Build.0 = Release|Any CPU
 		{DBE68018-9DB5-44C3-8465-A5596963AE2E}.Release|x86.ActiveCfg = Release|Any CPU
 		{DBE68018-9DB5-44C3-8465-A5596963AE2E}.Release|x86.Build.0 = Release|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Debug|x64.Build.0 = Debug|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Debug|x86.Build.0 = Debug|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Release|x64.ActiveCfg = Release|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Release|x64.Build.0 = Release|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Release|x86.ActiveCfg = Release|Any CPU
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +124,7 @@ Global
 		{475029AA-89AE-4551-978F-40EFCFB585A5} = {BD8BA25C-A91D-419D-99B6-B575ADD6D061}
 		{0CD7E9ED-65DD-4EB0-8542-2EB7AE300E39} = {BD8BA25C-A91D-419D-99B6-B575ADD6D061}
 		{DBE68018-9DB5-44C3-8465-A5596963AE2E} = {BD8BA25C-A91D-419D-99B6-B575ADD6D061}
+		{B6BD93DB-A6DF-4943-8EDA-382BE8DDE4CE} = {BD8BA25C-A91D-419D-99B6-B575ADD6D061}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {84D5AF06-1243-46F1-9D58-70ED572832C3}
