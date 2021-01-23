@@ -18,3 +18,5 @@ Available projects from the solution will be available through the ports:
  - `MvcClient` : 5002
  - `JavaScriptClient` : 5003
  - `ReactClient` : 6003 (ReactClient is not configured for work with IdentityServer, it's just initial project)
+
+Please note that sensitive information (like client secret) shouldn't be stored in the source code of your application.
